@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, Router } from '@angular/router';
-import { PagePrestationsComponent } from './pages/page-prestations/page-prestations.component';
+import { PageClientComponent } from './pages/page-client/page-client.component';
 
 const appRoutes: Routes = [
-  { path: '', component: PagePrestationsComponent }
+  { path: '', component: PageClientComponent }
 ];
 
 @NgModule({
@@ -13,4 +13,4 @@ const appRoutes: Routes = [
     )
   ]
 })
-export class PrestationsRoutingModule { }
+export class ClientsRoutingModule { }

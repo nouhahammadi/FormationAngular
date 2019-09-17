@@ -4,8 +4,6 @@ import { PageLoginComponent } from './login/pages/page-login/page-login.componen
 import { PageNotFoundComponent } from './page-not-found/pages/page-not-found/page-not-found.component';
 
 const appRoutes: Routes = [
-  { path: 'login', component: PageLoginComponent },
-
   { path: '',
     redirectTo: '/login',
     pathMatch: 'full'
@@ -13,6 +11,14 @@ const appRoutes: Routes = [
   {
     path: 'prestations',
     loadChildren: () => import('./prestations/prestations.module').then(mod => mod.PrestationsModule),
+  },
+  {
+    path: 'clients',
+    loadChildren: () => import('./client/client.module').then(mod => mod.ClientModule),
+  },
+  {
+    path: '**',
+    loadChildren: () => import('./page-not-found/page-not-found.module').then(mod => mod.PageNotFoundModule),
   },
 ];
 
