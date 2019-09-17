@@ -5,10 +5,15 @@ import { PageNotFoundComponent } from './page-not-found/pages/page-not-found/pag
 
 const appRoutes: Routes = [
   { path: 'login', component: PageLoginComponent },
+
   { path: '',
     redirectTo: '/login',
     pathMatch: 'full'
-  }
+  },
+  {
+    path: 'prestations',
+    loadChildren: () => import('./prestations/prestations.module').then(mod => mod.PrestationsModule),
+  },
 ];
 
 
