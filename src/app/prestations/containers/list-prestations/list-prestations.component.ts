@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PrestationService } from '../../services/prestation.service';
 import { Prestation } from 'src/app/shared/models/prestation.model';
+import { State } from 'src/app/shared/enums/state.enum';
 
 @Component({
   selector: 'app-list-prestations',
@@ -16,6 +17,9 @@ export class ListPrestationsComponent implements OnInit {
   ngOnInit() {
     this.collection = this.prestationService.collection;
     this.headers = ['Type', 'Client', 'Nbre jours', 'Tgm HT' , 'Total HT', 'Total TTC', 'State']
+  }
+  changeState(obj: {'item': Prestation, 'state': State}){
+    console.log(obj);
   }
 
 }
