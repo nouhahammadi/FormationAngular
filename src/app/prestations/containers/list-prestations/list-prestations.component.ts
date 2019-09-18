@@ -11,14 +11,14 @@ import { State } from 'src/app/shared/enums/state.enum';
 export class ListPrestationsComponent implements OnInit {
   public collection: Prestation[];
   // tslint:disable-next-line: ban-types
-  public headers: String [];
+public headers: string [];
   constructor(private prestationService: PrestationService) { }
 
   ngOnInit() {
     this.collection = this.prestationService.collection;
-    this.headers = ['Type', 'Client', 'Nbre jours', 'Tgm HT' , 'Total HT', 'Total TTC', 'State']
+    this.headers = ['Type', 'Client', 'Nbre jours', 'Tgm HT' , 'Total HT', 'Total TTC', 'State'];
   }
-  changeState(obj: {'item': Prestation, 'state': State}){
+  changeState(obj: {'item': Prestation, 'state': State}) {
     this.prestationService.update(obj.item, obj.state);
   }
 
