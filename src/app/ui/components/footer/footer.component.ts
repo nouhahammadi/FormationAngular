@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PrestationService } from 'src/app/prestations/services/prestation.service';
 
 @Component({
   selector: 'app-footer',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
+  public version: number;
 
-  constructor() { }
+  constructor(private prestationService: PrestationService) { }
 
   ngOnInit() {
+    this.prestationService.version$.subscribe((data) => {
+      this.version = data;
+    });
   }
 
 }
