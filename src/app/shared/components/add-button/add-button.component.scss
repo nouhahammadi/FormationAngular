@@ -1,0 +1,14 @@
+@import 'theme';
+:host {
+margin-left : 2px;
+
+
+}
+:host-context(app-template-a) button{
+
+  background: $color1;
+}
+:host-context(app-template-b) button{
+
+  background: $color2
+}

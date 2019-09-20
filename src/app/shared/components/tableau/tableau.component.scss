@@ -16,3 +16,7 @@ tbody>*{
   display: contents;
 
 }
+app-template-a #tableau-light thead{
+  background: $dark-color;
+  color: $light-color;
+}
