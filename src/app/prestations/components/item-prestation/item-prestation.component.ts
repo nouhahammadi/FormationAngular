@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Prestation } from 'src/app/shared/models/prestation.model';
 import { State } from 'src/app/shared/enums/state.enum';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-item-prestation',
@@ -10,10 +11,12 @@ import { State } from 'src/app/shared/enums/state.enum';
 export class ItemPrestationComponent implements OnInit {
 @Input() item: Prestation;
 @Output () nItem: EventEmitter<{'item': Prestation, 'state': State}> = new EventEmitter();
+
 // public states = Object.values(State) ; // if inf angular 6
 public states = State;
 
-  constructor() { }
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -24,4 +27,7 @@ this.nItem.emit({
   }
 );
   }
+  edit() {
+    this.router.navigate(['prestations/edit', this.item.id]);
+      }
 }

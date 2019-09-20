@@ -12,7 +12,8 @@ export const environment = {
     storageBucket: 'formation-angularrs2i.appspot.com',
     messagingSenderId: '804770880533',
     appId: '1:804770880533:web:27a9a432e5bc0c3ebb021c'
-  }
+  },
+  urlApi: 'https://monapidev.com/'
 };
 
 /*

@@ -17,8 +17,13 @@ export class AddPrestationComponent implements OnInit {
   ngOnInit() {
   }
   submitted(item: Prestation) {
-    this.prestationService.add(item);
-    this.router.navigate(['../'], {relativeTo: this.route});
+    this.prestationService.add(item).then(() => {
+      this.router.navigate(['../'], {relativeTo: this.route});
+    });
+
   }
+  // this.prestationService.add(item).subcribe((data) => {
+  //   this.router.navigate(['../'], {relativeTo: this.route});
+  //  });
 
 }
